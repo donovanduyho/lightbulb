@@ -30,11 +30,7 @@ SECRET_KEY = "django-insecure-nma=xi6x2p-crjg^ifqqkapyu1qjd0l=+wn)-rijk_o%$!k3w_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< Updated upstream
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1']
-=======
 ALLOWED_HOSTS = ["*"]
->>>>>>> Stashed changes
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
