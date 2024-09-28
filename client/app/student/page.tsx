@@ -1,18 +1,20 @@
-import Link from "next/link";
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <div className="font-sans">
       <nav
-        style={{ boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)" }}
+        style={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}
         className="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-white z-10"
       >
         <div className="flex items-center ">
           <a href="/" className="cursor-pointer">
-            <img
-              src="assets/nobg-logo.png"
-              alt="Lightbulb Logo"
-              className="h-12 w-12"
+            <Image
+              src="/assets/nobg-logo.png"
+              alt="logo"
+              width={50}
+              height={50}
             />
           </a>
           <h1 className="text-2xl -ml-2">
@@ -69,7 +71,7 @@ export default function Home() {
           <img
             src="assets/students.png"
             alt="Students Picture"
-            style={{ marginLeft: "80px" }}
+            style={{ marginLeft: '80px' }}
             className="h-21 w-30 mt-10 "
           />
         </div>

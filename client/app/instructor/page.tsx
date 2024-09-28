@@ -1,18 +1,20 @@
-import Link from "next/link";
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <div className="font-sans">
       <nav
-        style={{ boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)" }}
+        style={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}
         className="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-white z-10"
       >
         <div className="flex items-center ">
           <a href="/" className="cursor-pointer">
-            <img
-              src="assets/nobg-logo.png"
-              alt="Lightbulb Logo"
-              className="h-12 w-12"
+            <Image
+              src="/assets/nobg-logo.png"
+              alt="logo"
+              width={50}
+              height={50}
             />
           </a>
           <h1 className="text-2xl -ml-2">
@@ -39,14 +41,19 @@ export default function Home() {
         </ul>
       </nav>
 
-      <section id="home" className="h-screen flex items-center justify-left ml-10">
+      <section
+        id="home"
+        className="h-screen flex items-center justify-left ml-10"
+      >
         <div className="text-left -mt-18">
           <h1 className="text-4xl mb-4">Instructors</h1>
           <p className="mb-6 text-lg">
             Lightbulb is a platform designed specifically for educators to
             <br /> enhance their teaching and connect with students more
-            <br /> effectively. Teachers can create and manage classes to address
-            <br /> student questions and have the class participate in real-time discussions.
+            <br /> effectively. Teachers can create and manage classes to
+            address
+            <br /> student questions and have the class participate in real-time
+            discussions.
           </p>
 
           <div className="flex justify-left space-x-4">
@@ -60,12 +67,11 @@ export default function Home() {
         </div>
 
         <img
-            src="assets/connect.png"
-            alt="Students Picture"
-            style={{ marginLeft: "80px" }}
-            className="h-21 w-30 mt-10 "
-          />
-
+          src="assets/connect.png"
+          alt="Students Picture"
+          style={{ marginLeft: '80px' }}
+          className="h-21 w-30 mt-10 "
+        />
       </section>
     </div>
   );
