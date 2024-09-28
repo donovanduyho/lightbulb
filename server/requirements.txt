@@ -1,0 +1,4 @@
+# lightbulb/server/requirements.txt
+
+Django>=4.0
+mysqlclient>=2.1.0
