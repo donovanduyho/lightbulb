@@ -77,10 +77,11 @@ body{
     padding-top:40px;
 }
 .hero h1{
-    font-size: 35px;
+    font-size: 40px;
 }
 .hero p{
-    margin-top:-10px;
+    font-size:17px;
+    margin-top:-15px;
 }
 .hero .yellow{
     color: #FFA8AF;
