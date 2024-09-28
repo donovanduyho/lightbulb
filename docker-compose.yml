@@ -31,10 +31,10 @@ services:
     image: mysql:latest
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
-      MYSQL_DATABASE: my_database
-      MYSQL_USER: my_user
-      MYSQL_PASSWORD: user_password
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: Lightbulb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
     ports:
       - '3306:3306'
     volumes:
