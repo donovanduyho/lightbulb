@@ -6,10 +6,6 @@ const database = mysql.createPool({
     user:process.env.DB_USER,
     password:process.env.DB_PASSWORD,
     database:process.env.DB
-}).then(() => {
-    console.log("successfully connected to database")
-}).catch((err) => {
-    console.log("error connecting to database : " + err)
 })
 
 module.exports = database.promise();
