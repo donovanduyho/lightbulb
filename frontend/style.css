@@ -65,3 +65,46 @@ body{
     color: #fff; /* Change text color on hover (optional) */
     text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ffcc00; /* Adjust glow color and spread */
 }
+
+.hero{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-end; 
+    height: 100%;
+    margin-top:100px;
+    font-weight: 300;
+    padding-top:40px;
+}
+.hero h1{
+    font-size: 35px;
+}
+.hero p{
+    margin-top:-10px;
+}
+.hero .yellow{
+    color: #FFA8AF;
+}
+
+.button-container {
+    display: flex; 
+    justify-content: center; 
+    margin-top: 10px; 
+}
+
+
+.hero-button {
+    background-color: #F6CAD1; 
+    color: white;
+    border: none; 
+    padding: 10px 20px; 
+    margin: 0 10px; 
+    border-radius: 20px;
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: background-color 0.3s; 
+}
+
+.hero-button:hover {
+    background-color: #FFA8AF; 
+}
