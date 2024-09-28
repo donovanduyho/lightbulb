@@ -39,33 +39,40 @@ export default function Home() {
         </ul>
       </nav>
 
-      <section id="home" className="h-screen flex items-center justify-left ml-10">
-        <div className="text-left -mt-18">
-          <h1 className="text-4xl mb-4">Instructors</h1>
-          <p className="mb-6 text-lg">
-            Lightbulb is a platform designed specifically for educators to
-            <br /> enhance their teaching and connect with students more
-            <br /> effectively. Teachers can create and manage classes to address
-            <br /> student questions and have the class participate in real-time discussions.
-          </p>
+      <section
+        id="home"
+        className="h-screen flex items-center justify-left ml-10"
+      >
+        <div className="flex justify-between items-start -mt-18">
+          <div className="text-left">
+            <h1 className="text-4xl mb-4 mt-20">Students</h1>
+            <p className="mb-6 text-lg">
+              Lightbulb was developed by students, for students, with the
+              <br /> goal of establishing an accessible and supportive platform
+              where
+              <br /> students can ask questions anonymously.
+              <br /> Our platform fosters collaboration among peers and
+              instructors
+              <br /> all with the goal of working towards academic success.
+            </p>
 
-          <div className="flex justify-left space-x-4">
-            <button className=" bg-[#D0C2D8] text-white px-4 py-2 rounded-full hover:bg-[#c9a9db] transition duration-200">
-              Login
-            </button>
-            <button className="bg-[#D0C2D8] text-white px-4 py-2 rounded-full hover:bg-[#c9a9db] transition duration-200">
-              Sign Up
-            </button>
+            <div className="flex justify-left space-x-4">
+              <button className=" bg-[#D0C2D8] text-white px-4 py-2 rounded-full hover:bg-[#c9a9db] transition duration-200">
+                Login
+              </button>
+              <button className="bg-[#D0C2D8] text-white px-4 py-2 rounded-full hover:bg-[#c9a9db] transition duration-200">
+                Sign Up
+              </button>
+            </div>
           </div>
-        </div>
 
-        <img
-            src="assets/connect.png"
+          <img
+            src="assets/students.png"
             alt="Students Picture"
             style={{ marginLeft: "80px" }}
             className="h-21 w-30 mt-10 "
           />
-
+        </div>
       </section>
     </div>
   );

@@ -25,7 +25,7 @@ export default function Home() {
               href=""
               className="hover:text-yellow-500 transition duration-200"
             >
-              Instructors
+              Login
             </a>
           </li>
           <li>
@@ -33,7 +33,7 @@ export default function Home() {
               href=""
               className="hover:text-yellow-500 transition duration-200"
             >
-              Students
+              Sign Up
             </a>
           </li>
         </ul>
@@ -57,9 +57,11 @@ export default function Home() {
                 Instructors
               </button>
             </Link>
-            <button className="bg-[#F6CAD1] text-white px-4 py-2 rounded-full hover:bg-[#FFA8AF] transition duration-200">
-              Students
-            </button>
+            <Link href="/student">
+              <button className="bg-[#F6CAD1] text-white px-4 py-2 rounded-full hover:bg-[#FFA8AF] transition duration-200">
+                Students
+              </button>
+            </Link>
           </div>
         </div>
       </section>
