@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ClassBox from "./_components/class-box";
 
 export default function Home() {
   return (
@@ -22,37 +23,38 @@ export default function Home() {
         <ul className="flex space-x-3 items-center">
           <li>
             <a href=" ">
-                <img
-                src="assets/user.svg"
-                alt="User Logo"
-                className="h-5 w-5"
-                />
-                </a>
-            </li>
-            <li>
-                <a href=" ">
-                <img
+              <img src="assets/user.svg" alt="User Logo" className="h-5 w-5" />
+            </a>
+          </li>
+          <li>
+            <a href=" ">
+              <img
                 src="assets/settings.svg"
                 alt="Settings Logo"
                 className="h-5 w-5"
-                />
-                </a>
+              />
+            </a>
           </li>
           <li>
-                <a href="">
-                <img
+            <a href="">
+              <img
                 src="assets/log-out.svg"
                 alt="Logout Logo"
                 className="h-5 w-5"
-                />
-                </a>
+              />
+            </a>
           </li>
         </ul>
       </nav>
 
-      <section id="home" className="h-screen flex items-center justify-center">
-        
+      <section
+        id="home"
+        className="h-screen flex items-center justify-center"
+      >
+              <ClassBox />
+
       </section>
+
     </div>
   );
 }

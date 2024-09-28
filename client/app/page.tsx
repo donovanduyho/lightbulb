@@ -22,7 +22,7 @@ export default function Home() {
         <ul className="flex space-x-4">
           <li>
             <a
-              href=""
+              href="/login"
               className="hover:text-yellow-500 transition duration-200"
             >
               Login
@@ -30,7 +30,7 @@ export default function Home() {
           </li>
           <li>
             <a
-              href=""
+              href="/register"
               className="hover:text-yellow-500 transition duration-200"
             >
               Sign Up

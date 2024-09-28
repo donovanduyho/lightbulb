@@ -50,12 +50,17 @@ export default function Home() {
           </p>
 
           <div className="flex justify-left space-x-4">
-            <button className=" bg-[#D0C2D8] text-white px-4 py-2 rounded-full hover:bg-[#c9a9db] transition duration-200">
-              Login
-            </button>
-            <button className="bg-[#D0C2D8] text-white px-4 py-2 rounded-full hover:bg-[#c9a9db] transition duration-200">
-              Sign Up
-            </button>
+            <Link href="/login">
+              <button className=" bg-[#D0C2D8] text-white px-4 py-2 rounded-full hover:bg-[#c9a9db] transition duration-200">
+                Login
+              </button>
+            </Link>
+            <Link href="register">
+              <button className="bg-[#D0C2D8] text-white px-4 py-2 rounded-full hover:bg-[#c9a9db] transition duration-200">
+                Sign Up
+              </button>
+            </Link>
+           
           </div>
         </div>
 
