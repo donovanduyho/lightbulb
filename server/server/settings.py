@@ -99,9 +99,9 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'your_database_name',
-        'USER': 'your_username',
-        'PASSWORD': 'your_password',
+        'NAME': 'lightbulb',
+        'USER': 'root',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': '3306',  # default MySQL port
     }
