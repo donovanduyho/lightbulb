@@ -45,7 +45,7 @@ const Home: React.FC = () => {
       </nav>
 
       <section id="home" className="h-screen flex items-center justify-center">
-        <div className="text-center -mt-20">
+        <div className="text-center -mt-15">
           <h1 className="text-4xl mb-4">
             A platform where <span className="text-yellow-500">questions</span>
             <br /> light the way
