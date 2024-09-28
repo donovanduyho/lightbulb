@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Home: React.FC = () => {
   const reloadPage = () => {
     window.location.reload();
   };
+
 
   return (
     <div className="font-sans">
