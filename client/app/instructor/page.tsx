@@ -66,11 +66,12 @@ export default function Home() {
           </div>
         </div>
 
-        <img
-          src="assets/connect.png"
-          alt="Students Picture"
-          style={{ marginLeft: '80px' }}
-          className="h-21 w-30 mt-10 "
+        <Image
+          src="/assets/connect.png"
+          alt="students"
+          width={400}
+          height={400}
+          className="mt-10 mx-20"
         />
       </section>
     </div>
