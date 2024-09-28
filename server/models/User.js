@@ -11,6 +11,17 @@ class User {
             throw err;
         });
     }
+
+    static async checkPasswords(username, password) {
+        const enteredPassword = await passwordCheck.hashPassword(password);
+        const hashedPassword = await User.searchUser(username).password;
+
+        console.log(hashedPassword)
+        console.log(enteredPassword)
+
+        const returnedValue = await passwordCheck.comparePassword(enteredPassword, hashedPassword);
+        return returnedValue
+    }
 }
 
 module.exports = User
