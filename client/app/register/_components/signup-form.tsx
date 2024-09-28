@@ -14,6 +14,19 @@ import { FormEvent } from 'react';
 export default function SignupForm() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+    const username = formData.get('username');
+    const password = formData.get('password');
+    const first_name = formData.get('fname');
+    const last_name = formData.get('lname');
+
+    console.log(username);
+    console.log(password);
+    console.log(first_name);
+    console.log(last_name);
+
+    // Post to endpoint -> Redirect to dashboard
   };
 
   return (
