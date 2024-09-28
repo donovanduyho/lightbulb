@@ -28,15 +28,17 @@ services:
       - db
 
   db:
-    image: postgres:14
+    image: mysql:latest
+    restart: always
     environment:
-      POSTGRES_DB: mydatabase
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: my_database
+      MYSQL_USER: my_user
+      MYSQL_PASSWORD: user_password
     ports:
-      - '5432:5432'
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
 
 volumes:
   postgres_data:
