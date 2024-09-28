@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Home() {
   return (
     <div className="font-sans">
@@ -41,10 +39,7 @@ export default function Home() {
 
       <section id="home" className="h-screen flex items-center justify-center">
         <div className="text-center -mt-15">
-          <h1 className="text-4xl mb-4">
-            A platform where <span className="text-yellow-500">questions</span>
-            <br /> light the way
-          </h1>
+          <h1 className="text-4xl mb-4">Instructors</h1>
           <p className="mb-6 text-lg">
             Lightbulb allows students to ask questions
             <br /> anonymously while enhancing their
@@ -52,13 +47,11 @@ export default function Home() {
           </p>
 
           <div className="flex justify-center space-x-4">
-            <Link href="/instructor">
-              <button className=" bg-[#F6CAD1] text-white px-4 py-2 rounded-full hover:bg-[#FFA8AF] transition duration-200">
-                Instructors
-              </button>
-            </Link>
-            <button className="bg-[#F6CAD1] text-white px-4 py-2 rounded-full hover:bg-[#FFA8AF] transition duration-200">
-              Students
+            <button className=" bg-[#D0C2D8] text-white px-4 py-2 rounded-full hover:bg-[#c9a9db] transition duration-200">
+              Login
+            </button>
+            <button className="bg-[#D0C2D8] text-white px-4 py-2 rounded-full hover:bg-[#c9a9db] transition duration-200">
+              Sign Up
             </button>
           </div>
         </div>
