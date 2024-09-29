@@ -23,21 +23,44 @@ class Board{
          .catch((err) => console.log(err));
     }
 
-  /*  static async deleteBoardByBid(Bid){
-        database.query("DELETE FROM Board WHERE Bid =?", [Bid])
-        .catch((err) => console.log(err));
-    }*/
-
     static async deleteBoardByName(boardName){
         return database.query("DELETE FROM Board WHERE boardName =?", [boardName])
         .catch((err) => console.log(err));
     }
 
-    
+    static async showAllBoards() {
+        return database.query("SELECT * FROM Board")
+        .then(([results]) => results.map(row => ({ ...row})))
+        .catch((err) => {
+            console.log(err);
+            throw err;
+        })
+    }
 
-/* Password inputted by user through route*/ 
-/* */
+    static async getBoardPass(Bid) {
+        return database.query("SELECT Password FROM Board WHERE Bid = ?", [Bid])
+        .then(([results]) => results[0].Password)
+        .catch((err) => {
+            console.log(err);
+            throw err;
+        })
+    }
 
+    static async comparePass(Bid, password) {
+        const hashedPassword = await Board.getBoardPass(Bid)
+        console.log(hashedPassword)
+        return await passwordCheck.comparePassword(password, hashedPassword);
+    }
+
+    static async joinBoard(Bid, Uid)
+    {
+        return database.query("INSERT INTO Enrollment (Uid, Bid) VALUES (?, ?)", [Bid, Uid])
+        .then((results) => results)
+        .catch((err) => {
+            console.log(err);
+            throw err; 
+        })
+    }
 }
 
 
