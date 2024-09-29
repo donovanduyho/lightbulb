@@ -12,7 +12,6 @@ router.post('/createNewBoard', (req,res) => {
     } = req.body 
     Board.findBoardByName(boardName)
     .then(([results]) => {
-        console.log(results)
         if (results)
         {   
             res.status(400).json({message: "Board name already taken, please try a different board name."})
@@ -28,7 +27,6 @@ router.post('/createNewBoard', (req,res) => {
 
             Board.addBoard(newBoard)
             .then((results) => {
-                console.log(results);
                 res.status(200).json({message: "BOARD NAME CREATED"})
             })
             .catch((err) => {

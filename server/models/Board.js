@@ -1,17 +1,16 @@
 const database = require('../database');
-const passswordCheck = require('../helpers/passwordcheck');
+const passwordCheck = require('../helpers/passwordcheck');
 
 class Board{
 
-
-
     static async addBoard(Board){
-    const {Tid, boardName, Password} = Board
-    console.log(Tid, " + ", boardName, " + ", Password)
-    return database.query("INSERT INTO Board (Tid, boardName, Password) VALUES (?,?,?)",
-        [Tid, boardName, Password])
-    .then((data) => data.Tid)
-    .catch(err => console.log(err));
+        const {Tid, boardName, Password} = Board
+        console.log(Tid, " + ", boardName, " + ", Password)
+        const hashedPassword = await passwordCheck.hashPassword(Password)
+        return database.query("INSERT INTO Board (Tid, boardName, Password) VALUES (?,?,?)",
+            [Tid, boardName, hashedPassword])
+        .then((data) => data.Tid)
+        .catch(err => console.log(err));
     }
 
     static async findBoardByBid(Bid){
