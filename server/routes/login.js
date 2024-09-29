@@ -82,8 +82,9 @@ router.post('/loginUser', (req, res) => {
             .then((result) => {
                 if (result) 
                 {
-                    const token = jwt.sign({payload}, process.env.TOKEN_SECRET, {expiresIn: "15m"})
-                    res.status(200).json({ token: token })
+                    const accessToken = jwt.sign({payload}, process.env.TOKEN_SECRET, {expiresIn: "15m"})
+                    const refreshToken = jwt.sign({payload}, process.env.TOKEN_SECRET, {expiresIn: "7d"})
+                    res.status(200).json({ accessToken: accessToken, refreshToken: refreshToken })
                 }
                 else 
                 {

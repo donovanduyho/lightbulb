@@ -1,17 +1,17 @@
 const express = require("express");
-const router = express.Router()
-const dotenv = require("dotenv")
-const jwt = require("jsonwebtoken")
-const bodyParser = require("body-parser")
-const cors = require("cors")
-const cookieParser = require("cookie-parser")
+const router = express.Router();
+const dotenv = require("dotenv");
+const jwt = require("jsonwebtoken");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
-const app = express()
+const app = express();
 dotenv.config();
 
 app.use(cors());
 app.use(express.json());
-app.use(cookieParser())
+app.use(cookieParser());
 app.use('/', require("../server/routes/routes"))
 
 const port = 8000;
