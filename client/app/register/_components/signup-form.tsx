@@ -11,9 +11,10 @@ import {
 import { Switch } from '@/components/ui/switch';
 import { Button } from '@/components/ui/button';
 import { FormEvent } from 'react';
+import { redirect } from 'next/navigation';
 
 export default function SignupForm() {
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
@@ -21,15 +22,36 @@ export default function SignupForm() {
     const password = formData.get('password');
     const first_name = formData.get('fname');
     const last_name = formData.get('lname');
-    const is_admin = formData.get('admin');
+    const is_admin = formData.get('admin') ? 1 : 0;
 
-    console.log(username);
-    console.log(password);
-    console.log(first_name);
-    console.log(last_name);
-    console.log(is_admin);
+    const payload = {
+      username,
+      password,
+      first_name,
+      last_name,
+      is_admin,
+    };
 
-    // Post to endpoint -> Redirect to dashboard
+    try {
+      const response = await fetch(
+        'http://localhost:8000/login/createNewUser',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log(result);
+        redirect('/dashboard');
+      } else {
+        console.log('Failed to register.');
+      }
+    } catch (error) {
+      console.log('Error:', error);
+    }
   };
 
   return (
