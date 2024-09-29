@@ -11,25 +11,27 @@ import {
 import { Switch } from '@/components/ui/switch';
 import { Button } from '@/components/ui/button';
 import { FormEvent } from 'react';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export default function SignupForm() {
+  const { push } = useRouter();
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
-    const username = formData.get('username');
-    const password = formData.get('password');
-    const first_name = formData.get('fname');
-    const last_name = formData.get('lname');
-    const is_admin = formData.get('admin') ? 1 : 0;
+    const UserName = formData.get('username');
+    const Password = formData.get('password');
+    const FirstName = formData.get('fname');
+    const LastName = formData.get('lname');
+    const Teacher = formData.get('admin') ? 1 : 0;
 
     const payload = {
-      username,
-      password,
-      first_name,
-      last_name,
-      is_admin,
+      UserName,
+      Password,
+      FirstName,
+      LastName,
+      Teacher,
     };
 
     try {
@@ -45,7 +47,7 @@ export default function SignupForm() {
       if (response.ok) {
         const result = await response.json();
         console.log(result);
-        redirect('/dashboard');
+        push('/dashboard');
       } else {
         console.log('Failed to register.');
       }
