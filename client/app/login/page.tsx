@@ -1,5 +1,5 @@
-import React from 'react';
-import { Input } from '@/components/ui/input';
+import React from "react";
+import { Input } from "@/components/ui/input";
 import {
   Card,
   CardContent,
@@ -7,12 +7,14 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import NavComponent from "@/components/nav-component";
 
 export default function Login() {
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <NavComponent />
       <Card className="w-[350px]">
         <CardHeader>
           <CardTitle>Welcome back</CardTitle>
@@ -30,6 +32,15 @@ export default function Login() {
           <Button>Log in</Button>
         </CardFooter>
       </Card>
+      <p className="mt-2">
+        New here?{" "}
+        <a
+          href="/register"
+          className="text-[#95c2da] hover:underline cursor-pointer"
+        >
+          Click here to sign up.
+        </a>
+      </p>
     </div>
   );
 }
