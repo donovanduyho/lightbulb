@@ -51,10 +51,10 @@ export default function Home() {
             <p className="mb-6 text-lg">
               Lightbulb was developed by students, for students, with the
               <br /> goal of establishing an accessible and supportive platform
-              where students can ask questions anonymously.
-              <br /> Our platform fosters collaboration among peers and
-              instructors
-              <br /> all with the goal of working towards academic success.
+              where students can <br />
+              ask questions anonymously. Our platform fosters collaboration
+              among peers and <br />
+              instructors all with the goal of working towards academic success.
             </p>
 
             <div className="flex justify-left space-x-4">
