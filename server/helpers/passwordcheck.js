@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 
 class passwordCheck {
-    static hashPassword = (password) => {
+    static async hashPassword(password) {
         return new Promise ((resolve, reject) => {
             bcrypt.genSalt(12, (err, salt) => {
                 if (err) {
@@ -18,7 +18,7 @@ class passwordCheck {
     }
 
 
-    static comparePassword = (password, hashed) => {
+    static async comparePassword(password, hashed) {
         return bcrypt.compare(password, hashed)
     }
 }
