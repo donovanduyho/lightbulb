@@ -76,12 +76,13 @@ router.post('/loginUser', (req, res) => {
         }
         else
         {
-            const payload = results
+            const payload = results.Uid
+            console.log(payload)
             User.checkPasswords(UserName, Password)
             .then((result) => {
                 if (result) 
                 {
-                    const token = jwt.sign({payload}, process.env.TOKEN_SECRET)
+                    const token = jwt.sign({payload}, process.env.TOKEN_SECRET, {expiresIn: "15m"})
                     res.status(200).json({ token: token })
                 }
                 else 

@@ -54,7 +54,6 @@ class Board{
 
     static async joinBoard(Bid, Uid)
     {
-        //joining board code here
         return database.query("INSERT INTO Enrollment (Uid, Bid) VALUES (?, ?)", [Bid, Uid])
         .then((results) => results)
         .catch((err) => {

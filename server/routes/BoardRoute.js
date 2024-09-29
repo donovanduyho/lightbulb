@@ -97,8 +97,12 @@ router.post('/DeleteBoard', (req, res) => {
         if (result)
         {
             Board.joinBoard(Uid, Bid)
-            
-            res.status(200).json({message: "Successfully joined board."})
+            .then(() => {
+                res.status(200).json({message: "Successfully joined board."})
+            })
+            .catch((err) => {
+                res.status(400).json({message: "Error joining board, try again"})
+            })
         }
         else
         {
