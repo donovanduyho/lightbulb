@@ -1,7 +1,7 @@
-# lightbulb
+# Lightbulb
 
-hi :D -yama
+Frontend:
+Donovan & Yama
 
-omg heyyyy :DDD -aj
-
-hiii -jt 
+Backend:
+AJ & Jonathan
