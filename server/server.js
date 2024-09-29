@@ -14,5 +14,6 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/', require("../server/routes/routes"))
 
+
 const port = 8000;
-app.listen(port, () => console.log(`server running on port ${port}`))
+app.listen(port, () => console.log(`server running on port ${port}`));
