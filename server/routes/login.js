@@ -1,6 +1,6 @@
 const express = require("express")
-const passwordCheck = require("../helpers/passwordcheck")
 const router = express.Router()
+const jwt = require("jsonwebtoken")
 const User = require("../models/User")
 const StudentModel = require("../models/Student")
 const TeacherModel = require("../models/Teacher")
@@ -76,12 +76,13 @@ router.post('/loginUser', (req, res) => {
         }
         else
         {
+            const payload = results
             User.checkPasswords(UserName, Password)
             .then((result) => {
-                console.log(result)
                 if (result) 
                 {
-                    res.status(200).json({message: "Logging in user"})
+                    const token = jwt.sign({payload}, process.env.TOKEN_SECRET)
+                    res.status(200).json({ token: token })
                 }
                 else 
                 {

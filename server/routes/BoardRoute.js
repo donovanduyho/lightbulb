@@ -3,7 +3,6 @@ const router = express.Router()
 const Board = require("../models/Board")
 
 
-
 router.post('/createNewBoard', (req,res) => {
     const {
         Tid,
@@ -77,6 +76,40 @@ router.post('/DeleteBoard', (req, res) => {
     })
  })
 
- 
+ router.get('/showAllBoards', (req, res) => {
+    Board.showAllBoards()
+    .then((results) => {
+        res.json(results)
+    })
+    .catch((err) => {
+        res.status(400).json({message: "Problem fetching all boards"})
+        console.log(err);
+        throw err;
+    })
+ })
+
+ router.post('/:Bid/joinBoard', (req, res) => {
+    const {Bid} = req.params
+    const {Uid, Password} = req.body
+
+    Board.comparePass(Bid, Password)
+    .then((result) => {
+        if (result)
+        {
+            Board.joinBoard(Uid, Bid)
+            
+            res.status(200).json({message: "Successfully joined board."})
+        }
+        else
+        {
+            res.status(400).json({message: "Incorrect password, try a different password"})
+        }
+    })
+    .catch((err) => {
+        res.status(400).json("Something went wrong")
+    })
+
+ })
+
 
  module.exports = router
