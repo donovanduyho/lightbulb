@@ -1,7 +1,6 @@
 import React from "react";
 import SignupForm from "./_components/signup-form";
 import NavComponent from "@/components/nav-component";
-
 export default function Signup() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen mt-10">
