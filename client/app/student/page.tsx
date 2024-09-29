@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="font-sans">
       <nav
-        style={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}
+        style={{ boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)" }}
         className="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-white z-10"
       >
         <div className="flex items-center ">
@@ -51,11 +51,10 @@ export default function Home() {
             <p className="mb-6 text-lg">
               Lightbulb was developed by students, for students, with the
               <br /> goal of establishing an accessible and supportive platform
-              where
-              <br /> students can ask questions anonymously.
-              <br /> Our platform fosters collaboration among peers and
-              instructors
-              <br /> all with the goal of working towards academic success.
+              where students can <br />
+              ask questions anonymously. Our platform fosters collaboration
+              among peers and <br />
+              instructors all with the goal of working towards academic success.
             </p>
 
             <div className="flex justify-left space-x-4">
