@@ -8,7 +8,7 @@ export default function Signup() {
       <NavComponent />
       <SignupForm />
       <p className="mt-4">
-        Already have an account?
+        Already have an account?{" "}
         <a href="/login">
           <span style={{ color: "#B7D9EB", cursor: "pointer" }}>
             Click here to log in.
