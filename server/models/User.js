@@ -33,14 +33,13 @@ class User {
             Password,
             FirstName,
             LastName,
-            Student,
             Teacher
         } = user;
 
         const hashedPassword = await passwordCheck.hashPassword(Password)        
 
-        return database.query("INSERT INTO User (LastName, FirstName, UserName, Password, Student, Teacher) VALUES (?,?,?,?,?, ?)",
-        [LastName, FirstName, UserName, hashedPassword, Student, Teacher])
+        return database.query("INSERT INTO User (LastName, FirstName, UserName, Password, Teacher) VALUES (?,?,?,?, ?)",
+        [LastName, FirstName, UserName, hashedPassword, Teacher])
         .then(() => User.searchUser(UserName))
         .then((info) => info)
         .catch((err) => {
