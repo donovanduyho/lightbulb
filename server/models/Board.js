@@ -5,7 +5,6 @@ class Board{
 
     static async addBoard(Board){
         const {Tid, boardName, Password} = Board
-        console.log(Tid, " + ", boardName, " + ", Password)
         const hashedPassword = await passwordCheck.hashPassword(Password)
         return database.query("INSERT INTO Board (Tid, boardName, Password) VALUES (?,?,?)",
             [Tid, boardName, hashedPassword])
