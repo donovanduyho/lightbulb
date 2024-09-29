@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans">
+    <div className="relative h-screen">
       <nav
-        style={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}
+        style={{ boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)" }}
         className="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-white z-10"
       >
         <div className="flex items-center ">
@@ -41,8 +41,12 @@ export default function Home() {
         </ul>
       </nav>
 
-      <section id="home" className="h-screen flex items-center justify-center">
-        <div className="text-center -mt-15">
+      <section
+        id="home"
+        className="h-screen flex items-center justify-center 
+        absolute inset-0 -z-10 w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"
+      >
+        <div className="text-center">
           <h1 className="text-4xl mb-4">
             A platform where <span className="text-yellow-500">questions</span>
             <br /> light the way
