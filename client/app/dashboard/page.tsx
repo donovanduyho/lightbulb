@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
 import ClassBox from "./_components/class-box";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -55,10 +57,6 @@ export default function Home() {
       >
         <div>
           <h1 className="text-3xl mb-4 -mt-52">Classes</h1>
-
-          <button className=" bg-[#D0C2D8] text-white px-4 py-2 rounded-full hover:bg-[#c9a9db] transition duration-200">
-            Join Class
-          </button>
         </div>
       </section>
     </div>
