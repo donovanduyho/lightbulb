@@ -14,7 +14,6 @@ router.post('/createNewUser', (req, res) => {
         Password,
         FirstName,
         LastName,
-        Student,
         Teacher
     } = req.body
     User.searchUser(UserName)
@@ -30,13 +29,12 @@ router.post('/createNewUser', (req, res) => {
                 Password,
                 FirstName,
                 LastName,
-                Student,
                 Teacher
             };
             
             User.addUser(newUser)
             .then(([results]) => {
-                if (results.Student == 1)
+                if (results.Teacher == 0)
                 {
                     StudentModel.createNewStudent(results.Uid)
                     .then(() => {
